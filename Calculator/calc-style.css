@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a1628;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: 
+        radial-gradient(ellipse at top, #1a2a4a 0%, #0a1628 60%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Title above calculator */
+.calc-title {
+    color: #c9a84c;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.calculator {
+    background: linear-gradient(160deg, #1e2d3d, #152030);
+    border-radius: 24px;
+    padding: 30px;
+    width: 380px;
+    box-shadow: 
+        0 30px 80px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(201, 168, 76, 0.15),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* Display */
+.display {
+    background: #0d1b2a;
+    border-radius: 16px;
+    padding: 24px 24px 20px;
+    margin-bottom: 28px;
+    text-align: right;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid rgba(201, 168, 76, 0.12);
+    box-shadow: inset 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.expression {
+    font-size: 13px;
+    color: #5a6a7a;
+    margin-bottom: 8px;
+    min-height: 18px;
+    letter-spacing: 1px;
+}
+
+.result {
+    font-size: 44px;
+    font-weight: 300;
+    color: #c9a84c;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+/* Button Groups */
+.btn-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.btn-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Base Button */
+.btn {
+    background: linear-gradient(160deg, #243444, #1c2b3a);
+    color: #c8d8e8;
+    border: none;
+    border-radius: 14px;
+    padding: 0;
+    height: 72px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 
+        0 4px 8px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+    border-radius: 14px 14px 0 0;
+    pointer-events: none;
+}
+
+.btn:hover {
+    background: linear-gradient(160deg, #2d4058, #243447);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 16px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Clear / Function buttons */
+.btn-fn {
+    background: linear-gradient(160deg, #1e3248, #172638);
+    color: #c9a84c;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-fn:hover {
+    background: linear-gradient(160deg, #254060, #1e3248);
+}
+
+/* Operator buttons */
+.btn-op {
+    background: linear-gradient(160deg, #2a2010, #1e180a);
+    color: #c9a84c;
+    font-size: 22px;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.btn-op:hover {
+    background: linear-gradient(160deg, #362a14, #2a2010);
+    border-color: rgba(201, 168, 76, 0.4);
+}
+
+/* Zero button - spans 2 columns */
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* Equals button */
+.btn-eq {
+    background: linear-gradient(160deg, #c9a84c, #a8883c);
+    color: #0d1b2a;
+    font-size: 26px;
+    font-weight: 700;
+    border: none;
+    box-shadow: 
+        0 4px 15px rgba(201, 168, 76, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-eq:hover {
+    background: linear-gradient(160deg, #e0bc5a, #c9a84c);
+    box-shadow: 
+        0 8px 25px rgba(201, 168, 76, 0.5),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.btn-eq:active {
+    transform: translateY(1px);
+}
+
+/* Divider line between sections */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent);
+    margin: 4px 0 18px;
+}

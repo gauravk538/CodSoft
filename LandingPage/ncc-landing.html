@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCC Attendance System</title>
+    <link rel="stylesheet" href="ncc-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
+            NCC Attendance
+        </div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+            <li><a href="#contact" class="nav-btn">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🎖️ Built for NCC Units</span>
+            <h1>Manage NCC Attendance <span class="gradient-text">Smarter</span></h1>
+            <p>A modern digital solution for NCC units to track cadet attendance, manage records, and generate reports — all in one place.</p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary">Explore Features</a>
+                <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>200+</h3>
+                    <p>Cadets Managed</p>
+                </div>
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Digital Records</p>
+                </div>
+                <div class="stat">
+                    <h3>Real-time</h3>
+                    <p>Tracking</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-card">
+                <div class="card-header">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Today's Parade</span>
+                </div>
+                <div class="cadet-list">
+                    <div class="cadet present">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Cadet Gaurav Kumar</span>
+                        <span class="status present-tag">Present</span>
+                    </div>
+                    <div class="cadet present">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Cadet Rahul Singh</span>
+                        <span class="status present-tag">Present</span>
+                    </div>
+                    <div class="cadet absent">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Cadet Priya Sharma</span>
+                        <span class="status absent-tag">Absent</span>
+                    </div>
+                    <div class="cadet present">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Cadet Amit Verma</span>
+                        <span class="status present-tag">Present</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span>75% Attendance Today</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+        <div class="section-inner">
+            <h2 class="section-title">Why NCC Units Love It</h2>
+            <p class="section-sub">Everything you need to manage your NCC unit efficiently</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>Attendance Tracking</h3>
+                    <p>Mark attendance for every parade and training session. Track present, absent, and excused cadets in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Cadet Profiles</h3>
+                    <p>Complete cadet profiles with rank, year, batch, contact details, and performance history.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Visual reports and insights — attendance trends, top performers, and unit statistics at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>PDF Reports</h3>
+                    <p>Generate official attendance reports and cadet records in PDF format for ANO and administrative use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Achievements</h3>
+                    <p>Track promotions, certificates, awards, and evaluations for every cadet year by year.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Role-Based Access</h3>
+                    <p>Officers can manage records. Cadets can view their own data. Secure and controlled access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section section-dark">
+        <div class="section-inner">
+            <h2 class="section-title light">How It Works</h2>
+            <p class="section-sub light">Simple 3-step process for your NCC unit</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Register Cadets</h3>
+                        <p>Add all cadets with their details — name, rank, year, batch, and contact information.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Mark Attendance</h3>
+                        <p>Mark attendance for each parade and training. Takes less than 2 minutes for the whole unit.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Generate Reports</h3>
+                        <p>Download PDF reports anytime. Share with ANO or use for official NCC documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="section">
+        <div class="section-inner">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="fab fa-java tech-icon"></i>
+                    <span>Java 21</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-leaf tech-icon"></i>
+                    <span>Spring Boot</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database tech-icon"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-plug tech-icon"></i>
+                    <span>REST API</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-github tech-icon"></i>
+                    <span>GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="section section-dark cta-section">
+        <div class="section-inner">
+            <div class="cta-content">
+                <h2>Ready to Digitize Your NCC Unit?</h2>
+                <p>Built by an NCC cadet, for NCC units. Currently being developed at GTBIT, Delhi.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/gauravk538" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="mailto:gauravkr69919@gmail.com" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Contact Developer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 NCC Attendance System | Built by Gaurav Kumar, GTBIT Delhi</p>
+    </footer>
+
+</body>
+</html>

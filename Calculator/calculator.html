@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <p class="calc-title">Classic Calculator</p>
+        <div class="calculator">
+
+            <!-- Display -->
+            <div class="display">
+                <div class="expression" id="expression"></div>
+                <div class="result" id="result">0</div>
+            </div>
+
+            <!-- Row 1: AC, ⌫, %, ÷ -->
+            <div class="btn-row">
+                <button class="btn btn-fn" onclick="clearAll()">AC</button>
+                <button class="btn btn-fn" onclick="deleteLast()">⌫</button>
+                <button class="btn btn-fn" onclick="percentage()">%</button>
+                <button class="btn btn-op" onclick="appendOperator('/')">÷</button>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Row 2: 7, 8, 9, × -->
+            <div class="btn-row">
+                <button class="btn" onclick="appendNumber('7')">7</button>
+                <button class="btn" onclick="appendNumber('8')">8</button>
+                <button class="btn" onclick="appendNumber('9')">9</button>
+                <button class="btn btn-op" onclick="appendOperator('*')">×</button>
+            </div>
+
+            <!-- Row 3: 4, 5, 6, − -->
+            <div class="btn-row">
+                <button class="btn" onclick="appendNumber('4')">4</button>
+                <button class="btn" onclick="appendNumber('5')">5</button>
+                <button class="btn" onclick="appendNumber('6')">6</button>
+                <button class="btn btn-op" onclick="appendOperator('-')">−</button>
+            </div>
+
+            <!-- Row 4: 1, 2, 3, + -->
+            <div class="btn-row">
+                <button class="btn" onclick="appendNumber('1')">1</button>
+                <button class="btn" onclick="appendNumber('2')">2</button>
+                <button class="btn" onclick="appendNumber('3')">3</button>
+                <button class="btn btn-op" onclick="appendOperator('+')">+</button>
+            </div>
+
+            <!-- Row 5: 0 (wide), ., = -->
+            <div class="btn-row">
+                <button class="btn btn-zero" onclick="appendNumber('0')">0</button>
+                <button class="btn" onclick="appendDot()">.</button>
+                <button class="btn btn-eq" onclick="calculate()">=</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let expression = '';
+
+        function updateDisplay() {
+            document.getElementById('expression').textContent = expression;
+        }
+
+        function appendNumber(num) {
+            expression += num;
+            updateDisplay();
+        }
+
+        function appendOperator(op) {
+            if (expression === '') return;
+            const last = expression[expression.length - 1];
+            if (['+', '-', '*', '/'].includes(last)) {
+                expression = expression.slice(0, -1);
+            }
+            expression += op;
+            updateDisplay();
+        }
+
+        function appendDot() {
+            const parts = expression.split(/[\+\-\*\/]/);
+            const lastPart = parts[parts.length - 1];
+            if (!lastPart.includes('.')) {
+                if (lastPart === '') expression += '0';
+                expression += '.';
+                updateDisplay();
+            }
+        }
+
+        function clearAll() {
+            expression = '';
+            document.getElementById('result').textContent = '0';
+            updateDisplay();
+        }
+
+        function deleteLast() {
+            expression = expression.slice(0, -1);
+            updateDisplay();
+        }
+
+        function percentage() {
+            if (expression !== '') {
+                expression = String(parseFloat(expression) / 100);
+                updateDisplay();
+            }
+        }
+
+        function calculate() {
+            if (expression === '') return;
+            try {
+                const result = eval(expression);
+                const formatted = Number.isInteger(result) ? result : parseFloat(result.toFixed(10));
+                document.getElementById('result').textContent = formatted;
+                expression = String(formatted);
+                updateDisplay();
+            } catch (e) {
+                document.getElementById('result').textContent = 'Error';
+                expression = '';
+                updateDisplay();
+            }
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', function(e) {
+            if (e.key >= '0' && e.key <= '9') appendNumber(e.key);
+            else if (e.key === '+') appendOperator('+');
+            else if (e.key === '-') appendOperator('-');
+            else if (e.key === '*') appendOperator('*');
+            else if (e.key === '/') { e.preventDefault(); appendOperator('/'); }
+            else if (e.key === 'Enter' || e.key === '=') calculate();
+            else if (e.key === 'Backspace') deleteLast();
+            else if (e.key === 'Escape') clearAll();
+            else if (e.key === '.') appendDot();
+        });
+    </script>
+
+</body>
+</html>
